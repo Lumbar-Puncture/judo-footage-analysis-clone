@@ -39,3 +39,27 @@ python -m judo_footage_analysis.workflow.{module_name}
 ```
 
 You can watch the progress of a job in the terminal or from the luigi web-ui at http://localhost:8082.
+
+
+**Conversion of the Provided MKV File to Mp4**
+
+This project uses FFmpeg, provided through the Pyrthon Package
+imageio-ffmpeg, bundles a local FFmpeg binary inside the virtual envoirnment
+This allows video processing without installing the python package on your OS
+
+
+*Activating the Virtual Environment*
+```bash
+.\.venv\Scripts\Activate
+
+Once active, the prompt should look like:
+```bash
+(.venv) PS C:\path\to\project
+
+*Locating the FFmpeg Binary Inside the Venv*
+
+The following command prints the full path for FFmpeg executable to access it
+```bash
+python -c "import imageio_ffmpeg; print(imagio_ffmpeg.get_ffmpeg_exe())"
+
+
